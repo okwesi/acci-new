@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<div id="carouselExampleControls" class="carousel slide mb-3" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'acci_main/images/welcome carousel.jpg' %}" height="200px"
+                class="d-block w-100 carousel-img" alt="...">
+        </div>
+        <!-- video -->
+        <div class="carousel-item">
+            <video class="img-fluid " autoplay controls muted height="200px" width="100%">
+                <source
+                    src="{% static 'acci_main/images/A Message From Apostle Clement Brakatu (Chairman ACCI) - YouTube.mp4' %}"
+                    type="video/mp4" />
+            </video>
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+        </div>
+        <!-- video ends -->
+        <div class="carousel-item">
+            <img src="https://pbs.twimg.com/media/DXDJGx6U8AA5u2T.jpg" height="200px" class="d-block w-100 carousel-img"
+                alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!-- End of carouel -->
+
+
+
+<!-- devotional cards here -->
+
+
+<div class="devotion-list mb-3">
+
+    <div class="devotion 3">
+
+        <div class="devotion_image ">
+            <img src="https://lifewayresearch.com/wp-content/uploads/2018/08/freely-53471.jpg" />
+        </div>
+        <div class="devotion_title title-white">
+            <p>
+                <a style="text-decoration:none; color: white;" href="{% url 'devotion' %}">
+                    Devotion</a>
+            </p>
+        </div>
+    </div>
+    <div class="devotion 1">
+        <div class="devotion_image"> <img
+                src="https://cdn.dribbble.com/users/1761902/screenshots/8527483/media/9e88b2c1b2f4404045326469fbcc5a8b.gif" />
+        </div>
+        <div class="devotion_title title-white">
+            <p>Church</p>
+            <p style="margin-top: -30px; font-size:22px;">Resources</p>
+        </div>
+    </div>
+
+    <div class="devotion 2">
+        <div class="devotion_image">
+            <img
+                src="https://cdn.dribbble.com/users/1761902/screenshots/8527483/media/9e88b2c1b2f4404045326469fbcc5a8b.gif" />
+        </div>
+        <div class="devotion_title title-white">
+            <p>Year</p>
+            <p style="margin-top: -30px; font-size:22px; ">Theme</p>        
+        </div>
+    </div>
+
+</div>
+<!-- end of devotional Cards -->
+
+
+
+
+<!-- Cards -->
+{% for card in home %}
+<div style="border-radius: 2%;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;" class="card justify-content-center mb-2 ">
+    <img src="{{ card.header_image.url}}" alt="" class="card-img-top img">
+    <div class="card-body">
+        <h5 class="card-title text-center">{{card.title}}</h5>
+        <!-- {% if card.content|wordcount > 30 %} -->
+        <p style="text-indent: 0px;" class="card-text text-primary p-history"> {{card.content}}</p>
+        <!-- {% else%}
+        <p class="card-text p-history">{{card.content}}</p>
+        {% endif %} -->
+        <!-- <button onclick="myFunction()" id="myBtn" class="btn btn-outline-primary btn-sm">Read More</button> -->
+        <!-- {% if user.is_auntheticated %}
+        <a href="" class="btn btn-outline-danger btn-sm text-end float-end"><i class="bi bi-pen"></i></a>
+        <a href="" class="btn btn-outline-danger btn-sm text-end float-end"><i class="bi bi-trash"></i></a>
+        {% endif %} -->
+    </div>
+</div>
+{% endfor %}
+</div>
+
+<div class="text-center m-4">
+    <nav class="d-flex justify-content-center" aria-label="Page navigation example" style="margin-top: 10px;">
+
+        {% if is_paginated %}
+        <ul class="pagination">
+            {% if page_obj.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+                    <i class="bi bi-chevron-double-left"></i> Prev </a>
+            </li>
+            {% else %}
+            <li class="disabled page-item"><span class="page-link"> Prev </span></li>
+            {% endif %}
+
+            {% if page_obj.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}"> Next <i
+                        class="bi bi-chevron-double-right"></i> </a>
+            </li>
+            {% else %}
+            <li class="disabled page-item"><span class="page-link">Next</span></li>
+            {% endif %}
+        </ul>
+        {% endif %}
+
+    </nav>
+</div>
+
+<!-- End of Cards -->
+
+
+
+{% endblock %}

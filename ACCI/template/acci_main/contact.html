@@ -1,0 +1,232 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content %}
+<div
+    style="background-image: url('static/acci_main/images/acci.jpg'); color:whitesmoke; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+    <div class="row pt-3 m-auto mb-5">
+
+        <h2 class="text-center text-warning"> WE'D LOVE TO HEAR FROM YOU</h2>
+        <div class="col-md-6 col-lg-6 col-sm-12 pb-3 text-center">
+            <h3 class="">Contact Us</h3>
+            <hr class="contact-hr  mb-4 mt-5" style="color: yellow;">
+
+            <div class="row pt-3 m-auto">
+                <div>
+                    <h4 class="text-warning">Reach Us Through</h4>
+
+                    <p> HEADQUATERS LOCATION HERE</p>
+                    <p> Digital Address</p>
+                    <p>Telephone 1 </p>
+                    <p>Telephone 2 </p>
+                    <p>Telephone 3 </p>
+
+                    <p>Email here</p>
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 pb-3 ">
+                </div>
+            </div>
+        </div>
+        <!-- Forms -->
+        <div class="col-md-6 col-lg-6 col-sm-12 pb-3  ">
+            <h3 class="text-center">Send Us A Message</h3>
+
+            <hr class="contact-hr mb-5 mt-5">
+            <form id="contact-form" method="post" role="form" action="">
+                {% csrf_token %}
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="name" name="name" class="form-control" required>
+                            <label for="name" class="">Your name</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="email" name="email" class="form-control" required>
+                            <label for="email" class="">Your email</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                            <label for="subject" class="">Subject</label>
+                        </div>
+                    </div>
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-12">
+
+                        <div class="md-form">
+                            <textarea type="text" id="message" name="message" rows="2"
+                                class="form-control md-textarea" required></textarea>
+                            <label for="message">Your message</label>
+                        </div>
+
+                    </div>
+                </div>
+                <!--Grid row-->
+                <div class="text-center">
+                     <input type="submit" value="Send Email" class="btn btn-warning"
+                onclick="sendMail()" />
+                </div>
+               
+            </form>
+        </div>
+    </div>
+
+    <div class="m-5 mb-5">
+        <h3 class="text-center text-warning">
+            Follow Us
+        </h3>
+        <hr class="contact-hr mb-5 mt-3">
+
+        <div class="row ">
+            <div class="col-md-6 col-lg-3 col-sm-5 pb-3 text-center ">
+                <a href="#">
+                    <img src="{% static 'acci_main/images/facebook.png' %}" width="200px" height="150px">
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3 col-sm-5 pb-3 text-center ">
+                <a href="#">
+                    <img src="{% static 'acci_main/images/youtube.jpg' %}" width="200px" height="150px">
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3 col-sm-5 pb-3 text-center ">
+                <a href="#">
+                    <img src="{% static 'acci_main/images/twitter.png' %}" width="200px" height="150px">
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3 col-sm-5 pb-3 text-center ">
+                <a href="#">
+                    <img src="{% static 'acci_main/images/instagram.jpg' %}" width="200px" height="150px">
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="mb-5 mt-3">
+        <h3 class="text-center text-warning">
+            DONATE
+        </h3>
+        <hr class="contact-hr mb-5 mt-3">
+        <div class="row">
+            <div class="card-group col-lg-2 vhim">
+                <div class="card ">
+                    <img src="{% static 'acci_main/images/momo.png' %}" class="card-img-top" alt="...">
+                    <h5 class="card-title text-warning text-center">
+                        <p>Number One</p>
+                        <p>Number One</p>
+                    </h5>
+                </div>
+            </div>
+            <div class="card-group col-lg-2 vhim">
+                <div class="card ">
+                    <img src="{% static 'acci_main/images/vodacash.png' %}" class="card-img-top" alt="...">
+                    <h5 class="card-title text-danger text-center ">
+                        <p>Number One</p>
+                        <p>Number One</p>
+                    </h5>
+                </div>
+            </div>
+            <div class="card-group col-lg-2 vhim">
+                <div class="card bg-dark">
+                    <img src="{% static 'acci_main/images/airteltigo.jpg' %}" class="card-img-top" alt="...">
+                    <h5 class="card-title text-light text-center">
+                        <p>Number One</p>
+                        <p>Number One</p>
+                    </h5>
+                </div>
+            </div>
+            <div class="card-group col-lg-2 vhim">
+                <div class="card bg-dark">
+                    <img src="{% static 'acci_main/images/fidelity.jpg' %}" class="card-img-top" alt="...">
+                    <h5 class="card-title text-warning text-center">
+                        <p>Number One</p>
+                        <p>Number One</p>
+                    </h5>
+                </div>
+            </div>
+            <div class="card-group col-lg-2 vhim">
+                <div class="card bg-dark">
+                    <img src="{% static 'acci_main/images/gcb.png' %}" class="card-img-top" alt="...">
+                    <h5 class="card-title text-light text-center">
+                        <p>Number One</p>
+                        <p>Number One</p>
+                    </h5>
+                </div>
+            </div>
+            <div class="card-group col-lg-2 vhim">
+                <div class="card ">
+                    <img src="{% static 'acci_main/images/umb.jpg' %}" class="card-img-top" alt="...">
+                    <h5 class="card-title text-dark text-center">
+                        <p>Number One</p>
+                        <p>Number One</p>
+                    </h5>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="text-center" style="margin-top: 100px;">
+            <h3 class="text-center text-warning">
+                Locate Us
+            </h3>
+            <hr class="contact-hr mb-5 mt-3">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15833.93606540405!2d-2.0980746!3d7.1854792!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc7d6a3a4617677c6!2sThe%20Apostles&#39;%20Continuation%20Church%20Int&#39;l!5e0!3m2!1sen!2sgh!4v1637078630458!5m2!1sen!2sgh"
+                style="border:0;" allowfullscreen="" loading="lazy" class='map'></iframe>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    function sendMail() {
+        var name = document.getElementById("name").value
+        var subject = document.getElementById("subject").value
+        var message = document.getElementById("message").value
+        var email = document.getElementById("email").value
+        var namsub = name + '   ' + subject
+        console.log(name+subject+message+email)
+
+        Email.send({
+          //SecureToken: "53039522-e0e1-4539-a758-9ec63de6287e",
+          Host: "smtp.gmail.com",
+          Username: "gyamfiowusu630@gmail.com",
+          Password: "Ken@neth123",
+          To: 'gyamfiowusu630@gmail.com',
+          From: 'okwesi73@gmail.com',
+          Subject: "we need help",
+          Body: "this is what we like"
+          
+        }).then(
+          message => alert("messsage sent")
+        );
+
+      }
+</script>
+{% endblock content %}

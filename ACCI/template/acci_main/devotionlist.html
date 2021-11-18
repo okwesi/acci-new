@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row pt-3 m-auto">
+    {% for card in devotions %}
+    <div class="col-md-6 col-lg-6 col-sm-12 pb-3 text-center">
+
+    <div style="border-radius:2%;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; "
+        class=" justify-content-center mb-2 dev-card">
+        <div class="text-center dev-img">
+            <img height="200px" src="{{ card.header_image.url}}" alt="" class="card-img-top">
+        </div>
+        <div class="">
+            <h5 class="card-title text-center">{{card.title}}</h5>
+            <p style="text-indent: 0px;" class="card-text text-primary text-start text-danger"> {{card.date}}</p>
+            <div class="text-center">
+                <a href="{% url 'devotiondetail' card.id card.title %}" class="btn btn-primary m-2">
+                    <h6>Read</h6>
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+<div class="text-center m-4">
+    <nav class="d-flex justify-content-center" aria-label="Page navigation example" style="margin-top: 10px;">
+
+        {% if is_paginated %}
+        <ul class="pagination">
+            {% if page_obj.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+                    <i class="bi bi-chevron-double-left"></i> Prev </a>
+            </li>
+            {% else %}
+            <li class="disabled page-item"><span class="page-link"> Prev </span></li>
+            {% endif %}
+
+            {% if page_obj.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}"> Next <i
+                        class="bi bi-chevron-double-right"></i> </a>
+            </li>
+            {% else %}
+            <li class="disabled page-item"><span class="page-link">Next</span></li>
+            {% endif %}
+        </ul>
+        {% endif %}
+
+    </nav>
+</div>
+
+{% endblock content %}

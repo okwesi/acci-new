@@ -1,0 +1,370 @@
+@media screen and (min-width: 300px) {
+    .carousel-img {
+        height: 200px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .carousel-img {
+        height: 450px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .img {
+        height: 400px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .card {
+        width: 700px;
+        margin: 0 auto;
+        float: none;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .branch-search {
+        width: 50%;
+        margin: 0 auto;
+        float: none;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .container-branches {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (min-width: 300px) {
+    .container-branches {
+        margin-left: 10px;
+        margin-right: 10px;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .card-custom {
+        overflow: hidden;
+        min-height: 450px;
+        width: 350px;
+        border-top-left-radius: 5%;
+        border-top-right-radius: 5%;
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    }
+}
+
+.card-custom {
+    overflow: hidden;
+    min-height: 450px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+
+
+
+.card-custom-img {
+    height: 200px;
+    min-height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-color: inherit;
+}
+
+/* First border-left-width setting is a fallback */
+
+.card-custom-avatar img {
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    position: absolute;
+    left: 20%;
+    top: 50px;
+    width: 200px;
+    height: 200px;
+
+}
+
+.card-body {
+    padding-top: 60px;
+    margin: 0 auto;
+    float: none;
+}
+
+
+.contact-input {
+    border-radius: 1%;
+}
+
+.contact-hr {
+    width: 40%;
+    border: 5px solid yellow;
+    margin: 0 auto;
+    float: none;
+}
+
+.vl {
+    border-left: 6px solid green;
+    height: 300px;
+}
+
+
+
+@media screen and (min-width: 350px) {
+    .map {
+        width: 100%;
+        height: 450px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .map {
+        width: 60%;
+        height: 450px;
+        margin: 0 auto;
+        float: none;
+    }
+}
+
+@media screen and (min-width: 350px) {
+    .donate img {
+        width: 100px;
+        height: 100px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .donate img {
+        width: 250px;
+        height: 100px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+}
+
+
+
+.p-history {
+    margin: 0;
+    text-indent: 2rem;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+@media screen and (min-width: 800px) {
+    .history-img {
+        width: 90%px;
+        height: 400px;
+    }
+}
+
+@media screen and (min-width: 300px) {
+    .vhim {
+        width: 180px;
+        margin: 0 auto;
+        float: none;
+    }
+
+    .vhim img {
+        height: 120px;
+    }
+
+    #fixedbutton {
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
+    }
+
+    .fixedgoogle {
+        position: fixed;
+        bottom: 35px;
+        right: 0px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .vhim {
+        margin-left: 8px;
+        margin-right: 0px;
+        height: 180px;
+    }
+
+    .vhim img {
+        height: 120px;
+    }
+
+    #fixedbutton {
+        position: fixed;
+        bottom: 50px;
+        right: 0px;
+    }
+
+    .fixedgoogle {
+        position: fixed;
+        bottom: 100px;
+        right: 0px;
+    }
+}
+
+
+
+
+/* devotional card css */
+.devotion-list {
+    z-index: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+@media screen and (min-width: 300px) {
+    .devotion {
+        width: 110px;
+        height: 150px;
+        border-radius: 30px;
+        box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+        cursor: pointer;
+        transition: 0.4s;
+    }
+
+}
+
+@media screen and (min-width: 800px) {
+    .devotion {
+        margin: 30px auto;
+        width: 300px;
+        height: 200px;
+        border-radius: 40px;
+        box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+        cursor: pointer;
+        transition: 0.4s;
+    }
+
+}
+
+/* .devotion {
+    margin: 30px auto;
+    width: 300px;
+    height: 200px;
+    border-radius: 40px;
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    cursor: pointer;
+    transition: 0.4s;
+  } */
+
+.devotion .devotion_image {
+    width: inherit;
+    height: inherit;
+    border-radius: 30px;
+}
+
+.devotion .devotion_image img {
+    width: inherit;
+    height: inherit;
+    border-radius: 30px;
+    object-fit: cover;
+}
+
+@media screen and (min-width: 800px) {
+    .devotion .devotion_title {
+        font-size: 40px;
+        text-align: center;
+        border-radius: 0px 0px 40px 40px;
+        font-family: sans-serif;
+        font-weight: r;
+        margin-top: -80px;
+        height: 40px;
+
+    }
+}
+
+@media screen and (min-width: 300px) {
+    .devotion .devotion_title {
+        font-size: 25px;
+        text-align: center;
+        border-radius: 0px 0px 40px 40px;
+        font-family: sans-serif;
+        font-weight: r;
+        margin-top: -90px;
+        height: 40px;
+
+    }
+}
+
+
+
+.devotion:hover {
+    transform: scale(0.9, 0.9);
+    box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
+        -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+}
+
+.title-white {
+    color: white;
+}
+
+.title-black {
+    color: black;
+}
+
+@media all and (max-width: 300px) {
+    .devotion-list {
+        /* On small screens, we are no longer using row direction but column */
+        flex-direction: column;
+    }
+}
+
+
+/*
+  .card {
+    margin: 30px auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 40px;
+    background-image: url('https://i.redd.it/b3esnz5ra34y.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    transition: 0.4s;
+  }
+  */
+
+
+
+
+
+
+
+@media screen and (min-width: 300px) {
+    .dev-img {
+        width: 98%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .dev-card{
+        width: 100%;
+    }
+}
+@media screen and (min-width: 800px) {
+    .dev-img {
+        width: 70%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .dev-card{
+        width: 400px;
+    }
+}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<!-- serach Form -->
+<div style="background-color: #f2f3f4; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+
+<form action="" class="m-2" method="get">
+    <div class="input-group mb-3  branch-search">
+        <input  type="search" class="form-control form-control-lg" name="search" value="{{request.GET.search}}" placeholder="Search Here">
+        <button type="submit" class="input-group-text btn-primary"><i class="bi bi-search me-2"></i></button>
+    </div>
+</form>
+<!-- End Search Form -->
+
+<!-- Branches Card  -->
+<div class="container-braches">
+    <div class="row pt-3 m-auto">
+        <!-- for loop here -->
+        {% for branch  in branches %}          
+        <div class="col-md-6 col-lg-4 col-sm-12 pb-3 ">
+            <div class="card card-custom bg-white border-white border-0" style="">
+                <div class="card-custom-img"
+                style="background-image: url('static/acci_main/images/acci.jpg')">
+            </div>
+                <div class="card-custom-avatar text-center">
+                    <img class="img-fluid"
+                    src="{{branch.header_image.url}}"
+                    alt="Avatar" />
+                </div>
+                <div class="card-body " style="">
+                    <h5 class="card-title  border-bottom">{{ branch.pastors_name}}</h5>
+                    <h6 class=" text-center border-bottom">{{branch.branch_name}}</h6>
+                    <p class=" text-center">{{branch.country}}</p>
+                    <p class=" text-center">{{branch.telephone}}</p>
+                    <!-- <p class=" text-center">Geo-Location</p>                     -->
+                </div>
+                
+            </div>
+        </div>
+        {% endfor %}
+        <!-- for loop ends here -->
+    </div>
+</div>
+</div>
+
+<nav class="d-flex justify-content-center" aria-label="Page navigation example" style="margin-top: 10px;">
+
+    {% if is_paginated %}
+    <ul class="pagination">
+        {% if page_obj.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+            <i class="bi bi-chevron-double-left"></i> Prev </a>
+        </li>
+        {% else %}
+        <li class="disabled page-item"><span class="page-link"> Prev </span></li>
+        {% endif %}
+        
+        {% if page_obj.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}"> Next <i class="bi bi-chevron-double-right"></i> </a>
+        </li>
+        {% else %}
+        <li class="disabled page-item"><span class="page-link">Next</span></li>
+        {% endif %}
+    </ul>
+    {% endif %}
+
+</nav>
+
+{% endblock content %}
